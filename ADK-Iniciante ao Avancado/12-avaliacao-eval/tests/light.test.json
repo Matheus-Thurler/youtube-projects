@@ -1,0 +1,22 @@
+{
+  "eval_set_id": "light_test",
+  "name": "light_test",
+  "description": "Desliga a luz do quarto.",
+  "eval_cases": [
+    {
+      "eval_id": "turn_off_bedroom",
+      "conversation": [
+        {
+          "invocation_id": "inv-1",
+          "user_content": {"parts": [{"text": "Turn off the light in the Bedroom"}], "role": "user"},
+          "final_response": {"parts": [{"text": "The light in the Bedroom is now OFF."}], "role": "model"},
+          "intermediate_data": {
+            "tool_uses": [{"name": "set_light", "args": {"location": "Bedroom", "status": "OFF"}}],
+            "intermediate_responses": []
+          }
+        }
+      ],
+      "session_input": {"app_name": "light_agent", "user_id": "test_user", "state": {}}
+    }
+  ]
+}
